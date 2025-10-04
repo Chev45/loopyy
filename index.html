@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LOOPY & NAILONG</title>
+  <style>
+    body {
+      background-color: pink;
+      margin: 0;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-family: "Poppins", Arial, sans-serif;
+      overflow: hidden;
+      position: relative;
+    }
+
+    .card {
+      text-align: center;
+      background: rgba(255, 255, 255, 0.3);
+      padding: 30px 60px;
+      border-radius: 20px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      position: relative;
+      z-index: 1;
+    }
+
+    .title {
+      font-size: 48px;
+      font-weight: bold;
+      color: #333;
+    }
+
+    .sad {
+      font-size: 40px;
+      margin-left: 10px;
+    }
+
+    /* crying bear - bottom right inside card */
+    .cry {
+      position: absolute;
+      bottom: -20px;
+      right: -50px;
+      width: 200px;
+      height: auto;
+      pointer-events: none;
+    }
+
+    /* heart bear - upper left of the card */
+    .heart {
+      position: absolute;
+      top: -40px;
+      left: -40px;
+      width: 160px;
+      height: auto;
+      pointer-events: none;
+      transform: rotate(-10deg);
+    }
+
+    /* top-left bear - fixed at top left of page */
+    .corner {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      width: 180px;
+      height: auto;
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    /* silly bear - bottom right of page */
+    .bottom-right {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      width: 200px;
+      height: auto;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(-5deg);
+    }
+
+    /* yellow dino - top right of page */
+    .top-right {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      width: 180px;
+      height: auto;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(8deg);
+    }
+
+    /* new image - bottom left of page */
+    .bottom-left {
+      position: fixed;
+      bottom: 20px;
+      left: 20px;
+      width: 200px;
+      height: auto;
+      pointer-events: none;
+      z-index: 0;
+      transform: rotate(5deg);
+    }
+  </style>
+</head>
+<body>
+  <!-- autoplay background song -->
+  <audio autoplay loop>
+    <source src="song.mp3" type="audio/mpeg">
+  </audio>
+
+  <!-- top-left bear -->
+  <img src="loopy2.png" alt="Top Left Bear" class="corner">
+
+  <!-- top-right yellow dino -->
+  <img src="nailong1.png" alt="Top Right Dino" class="top-right">
+
+  <!-- silly bear bottom-right -->
+  <img src="loopy3.png" alt="Bottom Right Bear" class="bottom-right">
+
+  <!-- new bottom-left pair -->
+  <img src="nailong2.png" alt="Bottom Left Duo" class="bottom-left">
+
+  <div class="card" role="article" aria-label="Pastel content card">
+    <div style="display:flex; flex:1; align-items:center; justify-content:center;">
+      <div style="max-width:60%;">
+        <div class="title">
+          <span>HI FREN BATI NA TAYO<br>SORRY :)</span>
+          <span class="sad">☹️</span>
+        </div>
+      </div>
+    </div>
+    <img src="loopy1.png" alt="Crying Bear" class="cry">
+    <img src="loopy4.png" alt="Heart Bear" class="heart">
+  </div>
+</body>
+</html>

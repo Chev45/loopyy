@@ -15,6 +15,7 @@
       font-family: "Poppins", Arial, sans-serif;
       overflow: hidden;
       position: relative;
+      flex-direction: column;
     }
 
     .card {
@@ -38,7 +39,6 @@
       margin-left: 10px;
     }
 
-    /* crying bear - bottom right inside card */
     .cry {
       position: absolute;
       bottom: -20px;
@@ -48,7 +48,6 @@
       pointer-events: none;
     }
 
-    /* heart bear - upper left of the card */
     .heart {
       position: absolute;
       top: -40px;
@@ -59,7 +58,6 @@
       transform: rotate(-10deg);
     }
 
-    /* top-left bear - fixed at top left of page */
     .corner {
       position: fixed;
       top: 20px;
@@ -70,7 +68,6 @@
       z-index: 0;
     }
 
-    /* silly bear - bottom right of page */
     .bottom-right {
       position: fixed;
       bottom: 20px;
@@ -82,7 +79,6 @@
       transform: rotate(-5deg);
     }
 
-    /* yellow dino - top right of page */
     .top-right {
       position: fixed;
       top: 20px;
@@ -94,7 +90,6 @@
       transform: rotate(8deg);
     }
 
-    /* new image - bottom left of page */
     .bottom-left {
       position: fixed;
       bottom: 20px;
@@ -105,13 +100,43 @@
       z-index: 0;
       transform: rotate(5deg);
     }
+
+    /* Play button above the text card */
+    .music-btn {
+      margin-bottom: 20px;
+      padding: 10px 20px;
+      border-radius: 10px;
+      background-color: white;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 10;
+      border: none;
+      box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+      transition: background-color 0.3s;
+    }
+
+    .music-btn:hover {
+      background-color: #ffe6f0;
+    }
   </style>
 </head>
 <body>
-  <!-- autoplay background song -->
-  <audio autoplay loop>
+  <!-- background music (autoplay muted, enabled via button) -->
+  <audio id="bg-music" autoplay loop muted>
     <source src="song.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
   </audio>
+
+  <!-- Play Music Button ABOVE the text card -->
+  <button onclick="playMusic()" class="music-btn">🎵 Play Music</button>
+
+  <script>
+    function playMusic() {
+      const audio = document.getElementById("bg-music");
+      audio.muted = false;
+      audio.play().catch(console.error);
+    }
+  </script>
 
   <!-- top-left bear -->
   <img src="loopy2.png" alt="Top Left Bear" class="corner">
@@ -125,6 +150,7 @@
   <!-- new bottom-left pair -->
   <img src="nailong2.png" alt="Bottom Left Duo" class="bottom-left">
 
+  <!-- Card with message -->
   <div class="card" role="article" aria-label="Pastel content card">
     <div style="display:flex; flex:1; align-items:center; justify-content:center;">
       <div style="max-width:60%;">
